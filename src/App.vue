@@ -1,16 +1,22 @@
 <template>
   <div id="app">
     <AppHeader />
+    <main>
+      <div class="contents">Contents goes here</div>
+      <ShopNav />
+    </main>
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/AppHeader.vue";
+import ShopNav from "./components/ShopNav.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
+    ShopNav,
   },
 };
 </script>
@@ -21,5 +27,13 @@ export default {
 #app {
   background-color: #1c1c1c;
   padding: 30px 0;
+
+  main {
+    color: #ffffff;
+
+    .contents {
+      padding: 50px 150px;
+    }
+  }
 }
 </style>

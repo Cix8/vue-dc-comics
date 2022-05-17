@@ -5,7 +5,11 @@
     </div>
     <nav class="col-right">
       <ul>
-        <li v-for="(link, index) in menuLinks" :key="index">
+        <li
+          v-for="(link, index) in menuLinks"
+          :key="index"
+          :class="{ active: link.active === true }"
+        >
           {{ link.text }}
         </li>
       </ul>
@@ -27,7 +31,7 @@ export default {
         {
           url: "#",
           text: "comics",
-          active: false,
+          active: true,
         },
         {
           url: "#",
@@ -96,10 +100,16 @@ header {
       li {
         line-height: 130px;
         text-transform: uppercase;
-        font-weight: 500;
+        font-weight: 700;
+        font-size: 0.8rem;
 
         &:not(li:first-child) {
           margin-left: 30px;
+        }
+
+        &.active {
+          color: #0282f9;
+          border-bottom: 5px solid #0282f9;
         }
       }
     }
