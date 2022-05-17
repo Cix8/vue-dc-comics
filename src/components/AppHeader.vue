@@ -81,14 +81,14 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  heigth: 130px;
+  heigth: 100px;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   padding: 0 150px;
 
   .col-left {
-    width: 100px;
+    width: 70px;
     padding: 15px 0;
   }
 
@@ -98,7 +98,7 @@ header {
       height: 100%;
 
       li {
-        line-height: 130px;
+        line-height: 100px;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.8rem;
