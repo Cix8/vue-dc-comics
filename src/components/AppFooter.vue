@@ -152,6 +152,7 @@ footer {
 
     .right {
       display: flex;
+      justify-content: flex-end;
       align-items: center;
 
       .anchor-container {
@@ -162,8 +163,6 @@ footer {
       }
 
       .icons-container {
-        flex-grow: 1;
-
         ul {
           display: flex;
           padding: 0 20px;
