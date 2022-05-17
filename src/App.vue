@@ -5,18 +5,21 @@
       <div class="contents">Contents goes here</div>
       <ShopNav />
     </main>
+    <AppFooter />
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import ShopNav from "./components/ShopNav.vue";
+import AppFooter from "./components/AppFooter.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
     ShopNav,
+    AppFooter,
   },
 };
 </script>
