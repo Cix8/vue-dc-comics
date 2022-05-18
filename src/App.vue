@@ -2,6 +2,7 @@
   <div id="app">
     <AppHeader />
     <main>
+      <AppJumbo />
       <SeriesList />
       <ShopNav />
     </main>
@@ -11,14 +12,16 @@
 
 <script>
 import AppHeader from "./components/AppHeader.vue";
-import ShopNav from "./components/ShopNav.vue";
+import AppJumbo from "./components/AppJumbo.vue";
 import SeriesList from "./components/SeriesList.vue";
+import ShopNav from "./components/ShopNav.vue";
 import AppFooter from "./components/AppFooter.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
+    AppJumbo,
     SeriesList,
     ShopNav,
     AppFooter,

@@ -1,5 +1,8 @@
 <template>
   <div class="list-container">
+    <div class="section-title">
+      <h2>CURRENT SERIES</h2>
+    </div>
     <ul class="series-list">
       <li v-for="(item, index) in seriesArray" :key="index">
         <div class="img-container">
@@ -114,7 +117,21 @@ export default {
 
 <style lang="scss" scoped>
 .list-container {
+  position: relative;
   padding: 50px 150px 20px;
+
+  .section-title {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    transform: translateY(-50%);
+
+    h2 {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0282f9;
+    }
+  }
 
   .series-list {
     display: flex;
