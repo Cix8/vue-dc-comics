@@ -1,48 +1,20 @@
 <template>
   <footer>
     <div class="top">
-      <div class="col">
+      <div v-for="(element, index) in linksArray" :key="index" class="col">
         <ul>
-          <li class="list-title">DC COMICS</li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
+          <li class="list-title">{{ element.title }}</li>
+          <li v-for="(item, thisIndex) in element.links" :key="thisIndex">
+            <a href="">{{ item }}</a>
+          </li>
         </ul>
-        <ul>
-          <li class="list-title">SHOP</li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <ul>
-          <li class="list-title">DC</li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <ul>
-          <li class="list-title">SITES</li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-          <li><a href="">Link</a></li>
-        </ul>
+        <template v-if="index == 0">
+          <ul>
+            <li class="list-title">SHOP</li>
+            <li><a href="">Shop DC</a></li>
+            <li><a href="">Shop DC Collectibles</a></li>
+          </ul>
+        </template>
       </div>
       <div class="img-container">
         <img src="../assets/img/dc-logo-bg.png" />
@@ -58,20 +30,8 @@
         </div>
         <div class="icons-container">
           <ul>
-            <li>
-              <img src="../assets/img/footer-facebook.png" />
-            </li>
-            <li>
-              <img src="../assets/img/footer-twitter.png" />
-            </li>
-            <li>
-              <img src="../assets/img/footer-youtube.png" />
-            </li>
-            <li>
-              <img src="../assets/img/footer-pinterest.png" />
-            </li>
-            <li>
-              <img src="../assets/img/footer-periscope.png" />
+            <li v-for="(icon, index) in footerIncosArray" :key="index">
+              <img :src="require('../assets/img/footer-' + icon + '.png')" />
             </li>
           </ul>
         </div>
@@ -83,6 +43,57 @@
 <script>
 export default {
   name: "AppFooter",
+  data() {
+    return {
+      linksArray: [
+        {
+          title: "DC COMICS",
+          links: [
+            "Characters",
+            "Comics",
+            "Movies",
+            "TV",
+            "Games",
+            "Videos",
+            "News",
+          ],
+        },
+        {
+          title: "DC",
+          links: [
+            "Term Of Use",
+            "Privacy policy (New)",
+            "Ad Choices",
+            "Advertising",
+            "Jobs",
+            "Subscriptions",
+            "Talent Workshops",
+            "CPSC Certificates",
+            "Ratings",
+            "Shop Help",
+            "Contact Us",
+          ],
+        },
+        {
+          title: "SITES",
+          links: [
+            "DC",
+            "MAD Magazine",
+            "DC Kids",
+            "DC Universe",
+            "DC Power Visa",
+          ],
+        },
+      ],
+      footerIncosArray: [
+        "facebook",
+        "twitter",
+        "youtube",
+        "pinterest",
+        "periscope",
+      ],
+    };
+  },
 };
 </script>
 
