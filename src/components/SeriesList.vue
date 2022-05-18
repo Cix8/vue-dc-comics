@@ -4,14 +4,11 @@
       <h2>CURRENT SERIES</h2>
     </div>
     <ul class="series-list">
-      <li v-for="(item, index) in seriesArray" :key="index">
-        <div class="img-container">
-          <img :src="item.thumb" :alt="item.type + ': ' + item.series" />
-        </div>
-        <div class="title">
-          <h3>{{ item.series }}</h3>
-        </div>
-      </li>
+      <SingleSeries
+        v-for="(item, index) in seriesArray"
+        :key="index"
+        :seriesObj="item"
+      />
     </ul>
     <div class="btn-container">
       <button class="load-more-btn">LOAD MORE</button>
@@ -20,8 +17,13 @@
 </template>
 
 <script>
+import SingleSeries from "./SingleSeries.vue";
+
 export default {
   name: "SeriesList",
+  components: {
+    SingleSeries,
+  },
   data: function () {
     return {
       seriesArray: [
@@ -136,25 +138,6 @@ export default {
   .series-list {
     display: flex;
     flex-wrap: wrap;
-
-    li {
-      $width: calc(((100vw - 320px) / 6) - 20px);
-
-      width: $width;
-      margin: 10px;
-      padding: 5px;
-
-      .img-container {
-        width: $width;
-        height: $width;
-        margin-bottom: 10px;
-
-        img {
-          object-fit: cover;
-          object-position: 60% top;
-        }
-      }
-    }
   }
 
   .btn-container {
