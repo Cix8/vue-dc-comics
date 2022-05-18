@@ -118,8 +118,22 @@ export default {
     flex-wrap: wrap;
 
     li {
-      width: calc((100% / 6) - 20px);
+      $width: calc(((100vw - 320px) / 6) - 20px);
+
+      width: $width;
       margin: 10px;
+      padding: 5px;
+
+      .img-container {
+        width: $width;
+        height: $width;
+        margin-bottom: 10px;
+
+        img {
+          object-fit: cover;
+          object-position: 60% top;
+        }
+      }
     }
   }
 }
