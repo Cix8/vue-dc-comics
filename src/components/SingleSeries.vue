@@ -7,7 +7,7 @@
       />
     </div>
     <div class="title">
-      <h3>{{ seriesObj.series }}</h3>
+      <h5>{{ seriesObj.series }}</h5>
     </div>
   </li>
 </template>
@@ -38,6 +38,10 @@ li {
       object-fit: cover;
       object-position: 60% top;
     }
+  }
+
+  .title {
+    text-transform: uppercase;
   }
 }
 </style>
