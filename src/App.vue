@@ -2,7 +2,7 @@
   <div id="app">
     <AppHeader />
     <main>
-      <div class="contents">Contents goes here</div>
+      <SeriesList />
       <ShopNav />
     </main>
     <AppFooter />
@@ -12,12 +12,14 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import ShopNav from "./components/ShopNav.vue";
+import SeriesList from "./components/SeriesList.vue";
 import AppFooter from "./components/AppFooter.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
+    SeriesList,
     ShopNav,
     AppFooter,
   },
@@ -33,10 +35,6 @@ export default {
 
   main {
     color: #ffffff;
-
-    .contents {
-      padding: 50px 150px;
-    }
   }
 }
 </style>

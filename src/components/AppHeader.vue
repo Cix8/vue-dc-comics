@@ -81,7 +81,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  heigth: 100px;
+  height: 100px;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -89,7 +89,6 @@ header {
 
   .col-left {
     width: 70px;
-    padding: 15px 0;
   }
 
   .col-right {
@@ -99,6 +98,7 @@ header {
 
       li {
         line-height: 100px;
+        border-bottom: 5px solid transparent;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.8rem;
@@ -109,7 +109,7 @@ header {
 
         &.active {
           color: #0282f9;
-          border-bottom: 5px solid #0282f9;
+          border-bottom-color: #0282f9;
         }
       }
     }
