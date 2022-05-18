@@ -124,7 +124,6 @@ export default {
 
 #app {
   background-color: #1c1c1c;
-  padding: 30px 0;
 
   main {
     color: #ffffff;
