@@ -9,8 +9,9 @@
           v-for="(link, index) in menuLinks"
           :key="index"
           :class="{ active: link.active === true }"
+          @click="activeToggle(index)"
         >
-          {{ link.text }}
+          <a>{{ link.text }}</a>
         </li>
       </ul>
     </nav>
@@ -76,6 +77,17 @@ export default {
       ],
     };
   },
+  methods: {
+    activeToggle: function (index) {
+      for (let i = 0; i < this.menuLinks.length; i++) {
+        if (this.menuLinks[i].active) {
+          this.menuLinks[i].active = false;
+        }
+      }
+
+      this.menuLinks[index].active = true;
+    },
+  },
 };
 </script>
 
@@ -97,6 +109,8 @@ header {
       height: 100%;
 
       li {
+        min-width: 30px;
+        text-align: center;
         line-height: 100px;
         border-bottom: 5px solid transparent;
         text-transform: uppercase;

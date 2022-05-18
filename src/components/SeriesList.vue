@@ -10,6 +10,9 @@
         </div>
       </li>
     </ul>
+    <div class="btn-container">
+      <button class="load-more-btn">LOAD MORE</button>
+    </div>
   </div>
 </template>
 
@@ -111,7 +114,7 @@ export default {
 
 <style lang="scss" scoped>
 .list-container {
-  padding: 50px 150px;
+  padding: 50px 150px 20px;
 
   .series-list {
     display: flex;
@@ -133,6 +136,23 @@ export default {
           object-fit: cover;
           object-position: 60% top;
         }
+      }
+    }
+  }
+
+  .btn-container {
+    text-align: center;
+
+    .load-more-btn {
+      display: inline-block;
+      padding: 5px 50px;
+      background-color: #0282f9;
+      font-weight: 700;
+      color: #ffffff;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
       }
     }
   }
