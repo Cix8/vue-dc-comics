@@ -36,7 +36,7 @@ li {
 
     img {
       object-fit: cover;
-      object-position: 60% top;
+      object-position: top;
     }
   }
 
